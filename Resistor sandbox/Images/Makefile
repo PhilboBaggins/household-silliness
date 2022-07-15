@@ -1,27 +1,28 @@
 
 ALL := assembly.png lots-of-resistors.png              resistor-sandbox.png
 BACKGROUND_COLOUR := white
+FONT_SIZE := 200
 
 all: ${ALL}
 
 lots-of-resistors.png: resistors.jpg
 	magick \
 		-gravity Center \
-		\( -background ${BACKGROUND_COLOUR} -fill black -pointsize 200 label:"(25,000 x " \) \
+		\( -background ${BACKGROUND_COLOUR} -fill black -pointsize ${FONT_SIZE} label:"(25,000 x " \) \
 		$^ \
-		\( -background ${BACKGROUND_COLOUR} -fill black -pointsize 200 label:")" \) \
+		\( -background ${BACKGROUND_COLOUR} -fill black -pointsize ${FONT_SIZE} label:")" \) \
 		+append $@
 
 # Temporary placeholder
 resistor-sandbox.png:
-	magick -background ${BACKGROUND_COLOUR} -fill red -pointsize 200 label:"AWESOME" $@
+	magick -background ${BACKGROUND_COLOUR} -fill red -pointsize ${FONT_SIZE} label:"AWESOME" $@
 
 assembly.png: AliExpress-sandbox.webp lots-of-resistors.png resistor-sandbox.png
 	magick -gravity Center \
 		AliExpress-sandbox.webp \
-		\( -background ${BACKGROUND_COLOUR} -fill blue -pointsize 144 label:"+" \) \
+		\( -background ${BACKGROUND_COLOUR} -fill blue -pointsize ${FONT_SIZE} label:"+" \) \
 		lots-of-resistors.png \
-		\( -background ${BACKGROUND_COLOUR} -fill blue -pointsize 144 label:"=" \) \
+		\( -background ${BACKGROUND_COLOUR} -fill blue -pointsize ${FONT_SIZE} label:"=" \) \
 		resistor-sandbox.png \
 		-append $@
 
