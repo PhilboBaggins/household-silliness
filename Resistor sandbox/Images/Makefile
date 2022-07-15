@@ -1,5 +1,5 @@
 
-ALL := plus.png equals.png assembly.png              resistors.png resistor-sandbox.png
+ALL := plus.png equals.png assembly.png lots-of-resistors.png              resistor-sandbox.png
 BACKGROUND_COLOUR := white
 
 all: ${ALL}
@@ -10,13 +10,11 @@ plus.png:
 equals.png:
 	magick -background ${BACKGROUND_COLOUR} -fill blue -pointsize 144 label:"=" $@
 
-# TEmporary placeholders
-resistors.png:
-	magick -background ${BACKGROUND_COLOUR} -fill black -pointsize 200 label:"resistors" $@
+# Temporary placeholder
 resistor-sandbox.png:
 	magick -background ${BACKGROUND_COLOUR} -fill red -pointsize 200 label:"AWESOME" $@
 
-assembly.png: AliExpress-sandbox.webp plus.png resistors.png equals.png resistor-sandbox.png
+assembly.png: AliExpress-sandbox.webp plus.png resistors.jpg equals.png resistor-sandbox.png
 	magick convert -gravity Center -append $^ $@
 
 clean:
