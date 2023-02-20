@@ -17,9 +17,9 @@ lots-of-resistors.png: resistors.jpg
 resistor-sandbox.png:
 	magick -background ${BACKGROUND_COLOUR} -fill red -pointsize ${FONT_SIZE} label:"AWESOME" $@
 
-assembly.png: AliExpress-sandbox.webp lots-of-resistors.png resistor-sandbox.png
+assembly.png: AliExpress-sandbox.png lots-of-resistors.png resistor-sandbox.png
 	magick -gravity Center \
-		AliExpress-sandbox.webp \
+		AliExpress-sandbox.png \
 		\( -background ${BACKGROUND_COLOUR} -fill blue -pointsize ${FONT_SIZE} label:"+" \) \
 		lots-of-resistors.png \
 		\( -background ${BACKGROUND_COLOUR} -fill blue -pointsize ${FONT_SIZE} label:"=" \) \
