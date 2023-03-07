@@ -4,3 +4,6 @@
 [submodule "IKEA bookshelf joiner"]
 	path = IKEA bookshelf joiner
 	url = https://github.com/PhilboBaggins/ikea-bookshelf-joiner.git
+[submodule "Foot for shower shelves"]
+	path = Foot for shower shelves
+	url = https://github.com/PhilboBaggins/foot-for-shower-shelves
